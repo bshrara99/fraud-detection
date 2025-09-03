@@ -102,7 +102,7 @@ Below are general guidelines for interpreting the outputs you will see in the no
 
    Interpretation: a higher F1 or PR-AUC indicates better balanced performance on the rare class. If one method has much higher recall but much lower precision, it finds more anomalies but also more false alarms.
 
-2. **ROC / PR curves**: these visualize trade-offs as you vary score threshold. If curves of different methods cross, choose the method based on the operating point (high precision vs high recall).
+2. **ROC / PR curves**: these visualize trade-offs as you vary score threshold. If curves of different methods cross, choose the method based on the operating point (high precision vs high recall), values close to 1.0 are excellent; \~0.5 is random.
 
 3. **Confusion matrix** (if thresholded): shows counts of true positives, false positives, true negatives, and false negatives. Use this to compute the cost of false positives vs false negatives in your application.
 
@@ -110,13 +110,6 @@ Below are general guidelines for interpreting the outputs you will see in the no
 
 5. **Embeddings / clustering plots (t-SNE / UMAP)**: visualize whether anomalies cluster separately from normal points in 2D. These are diagnostic — good separation supports that models can learn to separate anomalies.
 
----
-
-## Example interpretation notes (fill with your actual numbers)
-
-* *Isolation Forest*: Precision = `<INSERT>`, Recall = `<INSERT>`. This indicates it found most anomalies but produced X% false positives — good if you prefer high recall.
-* *Autoencoder*: Reconstruction error mean for anomalies = `<INSERT>`, for normals = `<INSERT>`. A large gap implies reliable thresholds can be chosen.
-* *ROC-AUC*: `<INSERT>` — values close to 1.0 are excellent; \~0.5 is random.
 
 ---
 
